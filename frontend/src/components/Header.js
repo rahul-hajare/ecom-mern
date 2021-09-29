@@ -7,7 +7,7 @@ const Header = () => {
             <>
   <Navbar bg="dark" variant="dark">
     <Container>
-    <Navbar.Brand href="/home">Mobile Shop</Navbar.Brand>
+    <Navbar.Brand href="/home">Electronic Shop</Navbar.Brand>
     <Form className="d-flex">
         <FormControl
           type="search"

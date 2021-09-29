@@ -1,11 +1,12 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import HomeScreen from '../screens/HomeScreen'
 
 const Main = () => {
     return (
         <>
            <Container>
-                <h3 className="text-center py-3">Main Body</h3>
+                <HomeScreen/>
             </Container> 
         </>
     )
