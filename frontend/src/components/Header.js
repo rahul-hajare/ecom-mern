@@ -27,12 +27,16 @@ const Header = () => {
             <Button variant="outline-success">Search</Button>
           </Form>
           <Nav className="ml-auto">
-            <Nav.Link href="#home">
-              <i className="fas fa-shopping-cart" /> Cart
-            </Nav.Link>
-            <Nav.Link href="#features">
-              <i className="fas fa-user" /> Sign Up
-            </Nav.Link>
+            <LinkContainer to="/Cart">
+              <Nav.Link>
+                <i className="fas fa-shopping-cart" /> Cart
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/Register">
+              <Nav.Link>
+                <i className="fas fa-user" /> Sign Up
+              </Nav.Link>
+            </LinkContainer>
           </Nav>
         </Container>
       </Navbar>
