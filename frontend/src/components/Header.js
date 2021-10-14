@@ -32,9 +32,9 @@ const Header = () => {
                 <i className="fas fa-shopping-cart" /> Cart
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/Register">
+            <LinkContainer to="/login">
               <Nav.Link>
-                <i className="fas fa-user" /> Sign Up
+                <i className="fas fa-user" /> Sign In
               </Nav.Link>
             </LinkContainer>
           </Nav>
