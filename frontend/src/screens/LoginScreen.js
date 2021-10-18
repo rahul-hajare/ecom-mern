@@ -11,8 +11,6 @@ const LoginScreen = ({location, history}) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [newError, setnewError] = useState('')
-    const [checkError, setcheckError] = useState(false)
     
     const dispatch = useDispatch()
 
