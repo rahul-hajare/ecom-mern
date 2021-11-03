@@ -55,7 +55,6 @@ export const createOrder = (order) => async (dispatch, getState) => {
 };
 
 export const getOrderDetails = (id) => async (dispatch, getState) => {
-  debugger;
   try {
     dispatch({
       type: ORDER_DETAILS_REQUEST,
@@ -70,7 +69,6 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    debugger;
     const { data } = await axios.get(`/api/orders/${id}`, config);
 
     dispatch({
@@ -201,7 +199,6 @@ export const listMyOrders = () => async (dispatch, getState) => {
 };
 
 export const listOrders = () => async (dispatch, getState) => {
-  debugger;
   try {
     dispatch({
       type: ORDER_LIST_REQUEST,

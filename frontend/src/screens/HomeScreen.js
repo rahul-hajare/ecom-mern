@@ -4,8 +4,9 @@ import Product from "../components/Product";
 import { Row, Col } from "react-bootstrap";
 import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
-import Paginate from "../components/Paginate"
+import Paginate from "../components/Paginate";
 import Message from "../components/Message";
+import ProductCarousel from "../components/ProductCarousel";
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -24,6 +25,7 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
+      {!keyword && <ProductCarousel />}
       <h1>Trending Products</h1>
       {loading ? (
         <Loader />
@@ -31,14 +33,18 @@ const HomeScreen = ({ match }) => {
         <Message>{error}</Message>
       ) : (
         <>
-        <Row>
-          {products.map((product) => (
-            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-              <Product product={product} />
-            </Col>
-          ))}
-        </Row>
-        <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''}></Paginate>
+          <Row>
+            {products.map((product) => (
+              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                <Product product={product} />
+              </Col>
+            ))}
+          </Row>
+          <Paginate
+            pages={pages}
+            page={page}
+            keyword={keyword ? keyword : ""}
+          ></Paginate>
         </>
       )}
     </>

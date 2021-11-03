@@ -18,7 +18,6 @@ import {
 import Button from "@restart/ui/esm/Button";
 
 const OrderScreen = ({ match }) => {
-  debugger;
   const orderId = match.params.id;
 
   const [sdkReady, setSdkReady] = useState(false);
@@ -61,7 +60,6 @@ const OrderScreen = ({ match }) => {
       };
       document.body.appendChild(script);
     };
-    console.log("testing");
     if (!order || successPay || successDeliver || order._id !== orderId) {
       SetIsLoading(true);
       dispatch({ type: ORDER_PAY_RESET });
@@ -85,8 +83,6 @@ const OrderScreen = ({ match }) => {
   const deliverHandler = () => {
     dispatch(deliverOrder(order));
   };
-  console.log(orderDetails);
-  debugger;
   return !isLoading ? (
     loading ? (
       <Loader />
