@@ -3,14 +3,13 @@ import {
   Container,
   Nav,
   Navbar,
-  Button,
-  FormControl,
-  Form,
   NavDropdown,
 } from "react-bootstrap";
+import { Route } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userActions";
+import SearchBox from "./SearchBox";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -22,20 +21,12 @@ const Header = () => {
   };
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" >
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>Electronic Shop</Navbar.Brand>
           </LinkContainer>
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <Route render={({ history }) => <SearchBox history={history} />} />
           <Nav className="ml-auto">
             <LinkContainer to="/Cart">
               <Nav.Link>
